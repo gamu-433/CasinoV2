@@ -15,11 +15,15 @@ repositories {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
     }
+    maven {
+        name = "himajyun-repo"
+        url = "https://himajyun.github.io/mvn-repo/"
+    }
 }
 
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.20.2-R0.1-SNAPSHOT")
-    compileOnly 'com.github.ysl3000:Jecon:1.4.1'
+    compileOnly "jp.jyn:Jecon:2.2.1"
 }
 
 def targetJavaVersion = 17
