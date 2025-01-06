@@ -1,0 +1,4 @@
+name: peto-casinoV2
+version: '1.0'
+main: com.petoma.petoCasinoV2.PetoCasinoV2
+api-version: '1.20'
