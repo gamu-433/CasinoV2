@@ -1,0 +1,18 @@
+messages:
+  game_started: "&a{player}さんが丁半ゲームを開始しました！ 掛け金：&e{amount}円\n&7このメッセージをクリックすることで参加できます！"
+  not_enough_money: "&c所持金が足りないため参加できません！"
+  already_participated: "&cすでに参加済みです！"
+  joined_game: "&a{player}さんがゲームに参加しました！ 残り時間: {time}秒"
+  choose_even: "&a丁にかける"
+  choose_odd: "&a半にかける"
+  chose_even: "&a丁にかけました！"
+  chose_odd: "&a半にかけました！"
+  countdown: "&e残り{time}秒"
+  draw_started: "&a抽選を開始しています..."
+  draw_result: "&e結果は{result}でした！"
+  winner_paid: "&aおめでとうございます！ あなたに{amount}円が支払われました！"
+  loser_message: "&c賭けに失敗しました！"
+  canceled: "&e抽選はキャンセルされました。{amount}円を返金します。"
+odds:
+  favor_majority: true
+  bias_factor: 0.2
