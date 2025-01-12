@@ -1,18 +1,24 @@
+
 messages:
-  game_started: "&a{player}さんが丁半ゲームを開始しました！ 掛け金：&e{amount}円\n&7このメッセージをクリックすることで参加できます！"
-  not_enough_money: "&c所持金が足りないため参加できません！"
-  already_participated: "&cすでに参加済みです！"
-  joined_game: "&a{player}さんがゲームに参加しました！ 残り時間: {time}秒"
-  choose_even: "&a丁にかける"
-  choose_odd: "&a半にかける"
-  chose_even: "&a丁にかけました！"
-  chose_odd: "&a半にかけました！"
-  countdown: "&e残り{time}秒"
-  draw_started: "&a抽選を開始しています..."
-  draw_result: "&e結果は{result}でした！"
-  winner_paid: "&aおめでとうございます！ あなたに{amount}円が支払われました！"
-  loser_message: "&c賭けに失敗しました！"
-  canceled: "&e抽選はキャンセルされました。{amount}円を返金します。"
+  game_started: "§a{player}さんがダブルサイコロを開始しました！ 掛け金：§e{amount}円 コマンド/chn low か /chn high か /chn lucky7 で参加できます。"
+  game_not_start: "§cまだゲームが開始されていません！"
+  game_another_started: "他のゲームがすでに開始されています。"
+  not_enough_money: "§c所持金が足りないため参加できません！"
+  already_participated: "§cすでに参加済みです！"
+  joined_game: "§a{player}さんがゲームに参加しました！ 残り時間: {time}秒"
+  game_time: "§a残り時間: {time}秒"
+  choose_high: "§a{player}さんは、高いにかけました。"
+  choose_low: "§a{player}さんは、低いにかけました。"
+  choose_medium: "§a{player}さんは、ラッキーセブンにかけました。"
+  draw_started: "§a抽選を開始しています..."
+  draw_dice1: "§a1つめのサイコロの出目は{number}でした。"
+  draw_dice2: "§a2つめのサイコロの出目は{number}でした。"
+  draw_result: "§e結果は{result}でした！"
+  winner_paid: "§aあなたは{select}を選び、あなたに{amount}円が支払われました。おめでとうございます！"
+  winner_result: "§a当選者: {winners}"
+  loser_message: "§cあなたは{select}を選び、賭けに失敗しました！"
+  canceled: "§e抽選はキャンセルされました。{amount}円を返金します。"
+
 odds:
   favor_majority: true
   bias_factor: 0.2
