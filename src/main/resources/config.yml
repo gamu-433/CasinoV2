@@ -6,6 +6,7 @@ messages:
   not_enough_money: "§c所持金が足りないため参加できません！"
   already_participated: "§cすでに参加済みです！"
   joined_game: "§a{player}さんがゲームに参加しました！ 残り時間: {time}秒"
+  game_time: "§a残り時間: {time}秒"
   choose_high: "§a高いにかけました。"
   choose_low: "§a低いにかけました。"
   choose_medium: "§aラッキーセブンにかけました。"
@@ -13,9 +14,11 @@ messages:
   draw_dice1: "§a1つめのサイコロの出目は{number}でした。"
   draw_dice2: "§a2つめのサイコロの出目は{number}でした。"
   draw_result: "§e結果は{result}でした！"
-  winner_paid: "§aおめでとうございます！ あなたに{amount}円が支払われました！"
-  loser_message: "§c賭けに失敗しました！"
+  winner_paid: "§aあなたは{select}を選び、あなたに{amount}円が支払われました。おめでとうございます！"
+  winner_result: "§a当選者: {winners}"
+  loser_message: "§cあなたは{select}を選び、賭けに失敗しました！"
   canceled: "§e抽選はキャンセルされました。{amount}円を返金します。"
+
 odds:
   favor_majority: true
   bias_factor: 0.2
