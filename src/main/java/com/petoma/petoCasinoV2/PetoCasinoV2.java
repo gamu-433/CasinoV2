@@ -20,6 +20,7 @@ public class PetoCasinoV2 extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
         gameManager = new GameManager(this);
+        getServer().getPluginManager().registerEvents(new Listeners(), this);
         getCommand("chn").setExecutor(new CommandHandler(this, gameManager));
         getLogger().info("peto-casinoV2 has been enabled!");
     }

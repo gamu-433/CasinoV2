@@ -93,6 +93,9 @@ public class GameManager {
             player.sendMessage(message);
             return;
         }
+
+        if (startCount <= 15) return;
+
         if (participants.contains(player)) {
             String message = plugin.getConfig().getString("messages.already_participated");
             message = message.replace("{player}", player.getName())
@@ -114,20 +117,25 @@ public class GameManager {
                 .replace("{time}", String.valueOf(startCount - 15));
 
         player.sendMessage(message);
-        for (Player allPlayer : Bukkit.getServer().getOnlinePlayers()) {
+
+        for (Player allPlayer : participants) {
             allPlayer.playSound(player, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0f, 1.0f);
         }
+        player.playSound(player, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0f, 1.0f);
         }
 
     public void highJoin(Player player){
         if (!gameActive) {
             return;
         }
+        if (startCount <= 15) return;
         if (participants.contains(player)) return;
         userSelect.put(player,"high");
         String message = plugin.getConfig().getString("messages.choose_high");
         message = message.replace("{player}", player.getName());
-        player.sendMessage(message);
+        for (Player allPlayer : participants) {
+            allPlayer.sendMessage(message);
+        }
         participants.add(player);
     }
 
@@ -135,11 +143,16 @@ public class GameManager {
         if (!gameActive) {
             return;
         }
+
+        if (startCount <= 15) return;
+
         if (participants.contains(player)) return;
         userSelect.put(player,"lucky7");
         String message = plugin.getConfig().getString("messages.choose_medium");
         message = message.replace("{player}", player.getName());
-        player.sendMessage(message);
+        for (Player allPlayer : participants) {
+            allPlayer.sendMessage(message);
+        }
         participants.add(player);
     }
 
@@ -148,11 +161,17 @@ public class GameManager {
             return;
         }
 
+        if (startCount <= 15) return;
+
+
+
         if (participants.contains(player)) return;
         userSelect.put(player,"low");
         String message = plugin.getConfig().getString("messages.choose_low");
         message = message.replace("{player}", player.getName());
-        player.sendMessage(message);
+        for (Player allPlayer : participants) {
+            allPlayer.sendMessage(message);
+        }
         participants.add(player);
     }
 
@@ -265,7 +284,7 @@ public class GameManager {
                 String gameStartedMessage = plugin.getConfig().getString("messages.loser_message");
                 gameStartedMessage = gameStartedMessage.replace("{select}", userSelected);
                 player.sendMessage(gameStartedMessage);
-                player.playSound(player, Sound.BLOCK_NOTE_BLOCK_BASS, 1f,1f);
+                player.playSound(player, Sound.ENTITY_BLAZE_DEATH, 1f,1f);
             }
         }
 
