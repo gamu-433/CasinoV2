@@ -22,22 +22,47 @@ public class CommandHandler implements CommandExecutor {
         }
 
         Player player = (Player) sender;
-        if (args.length < 2) {
-            player.sendMessage("§c使用方法: /chn start <金額>");
+
+        // 引数の数が足りない場合
+        if (args.length < 1) {
+            player.sendMessage("§c使用方法: /chn <start|high|low|lucky7> <金額>");
             return true;
         }
 
-        if (args[0].equalsIgnoreCase("start")) {
-            try {
-                int amount = Integer.parseInt(args[1]);
-                gameManager.startGame(player, amount);
-            } catch (NumberFormatException e) {
-                player.sendMessage("§c金額は数字で指定してください！");
-            }
-            return true;
+        switch (args[0].toLowerCase()) {
+            case "start":
+                if (args.length < 2) {
+                    player.sendMessage("§c使用方法: /chn start <金額>");
+                    return true;
+                }
+                try {
+                    int amount = Integer.parseInt(args[1]);
+                    gameManager.startGame(player, amount);
+                } catch (NumberFormatException e) {
+                    player.sendMessage("§c金額は数字で指定してください！");
+                }
+                break;
+
+            case "high":
+                gameManager.joinGame(player);
+                gameManager.highJoin(player);
+                break;
+
+            case "low":
+                gameManager.joinGame(player);
+                gameManager.lowJoin(player);
+                break;
+
+            case "lucky7":
+                gameManager.joinGame(player);
+                gameManager.mediumJoin(player);
+                break;
+
+            default:
+                player.sendMessage("§c無効なサブコマンドです！");
+                break;
         }
 
-        player.sendMessage("§c無効なサブコマンドです！");
         return true;
     }
 }
